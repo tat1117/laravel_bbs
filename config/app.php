@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', $_ENV['APP_KEY']),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-128-CBC',
 
@@ -228,4 +228,17 @@ return [
 
     ],
 
+];
+
+// config/app.php
+
+return [
+    'providers' => [
+        Collective\Html\HtmlServiceProvider::class,
+    ],
+
+    'aliases' => [
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+    ],
 ];
