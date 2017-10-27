@@ -230,7 +230,6 @@ return [
 
 ];
 
-// config/app.php
 
 return [
     'providers' => [
@@ -242,3 +241,4 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
     ],
 ];
+?>

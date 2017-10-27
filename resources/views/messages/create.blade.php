@@ -1,28 +1,27 @@
-// resources/views/articles/create.blade.php
 
 @extends('layout')
 
 @section('content')
+
     <h1>Write a New Message</h1>
 
-    <hr/>
+<form class="form-group" action="http://localhost:8000/messages" method="post">
+title:  <input type="text" name="title" value=""><br>
+body:  <input type="textarea" name="body" value=""><br>
+created_at:  <input type="date" name="created_at" value=""><br>
+        <input type="submit" name="Add Message" value="Add Message">
+</form>
 
-    {!! Form::open(['url' => 'messages']) !!}
-        <div class="form-group">
-            {!! Form::label('title', 'Title:') !!}
-            {!! Form::text('title', null, ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('body', 'Body:') !!}
-            {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('created_at', 'Creat On:') !!}
-            {!! Form::input('date', 'created_at', date('Y-m-d'), ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::submit('Add Message', ['class' => 'btn btn-primary form-control']) !!}
-            <form method="POST" action="http://localhost:8000/messages" accept-charset="UTF-8">
-        </div>
-    {!! Form::close() !!}
-@endsection
+
+<?php
+if ($errors->any()){
+?>
+    <ul>
+        <?php foreach ($errors->all() as $error){?>
+            <li><?php echo $error ?></li>
+        <?php }; ?>
+    </ul>
+<?php  }; ?>
+
+
+@stop

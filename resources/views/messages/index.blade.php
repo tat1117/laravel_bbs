@@ -1,5 +1,4 @@
-<!-- resouces/views/articles/index.blade.php -->
-
+<?php
 @extends('layout')
 
 @section('content')
@@ -20,3 +19,4 @@
         </article>
     @endforeach
 @endsection
+?>
